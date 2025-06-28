@@ -1,0 +1,209 @@
+.billing-page {
+  padding: 32px;
+}
+
+.billing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.billing-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 32px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.billing-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.billing-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.billing-today {
+  color: #888;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+.billing-select {
+  padding: 8px 18px 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f8faff;
+  outline: none;
+  min-width: 150px;
+}
+
+.billing-summary-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+.billing-summary-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 24px 24px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 220px;
+}
+.summary-label {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.summary-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+.summary-link {
+  color: #2563eb;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.summary-btn {
+  background: #4d8aff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: fit-content;
+}
+.summary-btn:hover {
+  background: #2563eb;
+}
+.summary-amount {
+  font-size: 1.1rem;
+  color: #888;
+  margin-left: 8px;
+}
+.summary-desc {
+  color: #888;
+  font-size: 1rem;
+}
+.summary-card-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.summary-card-icon {
+  font-size: 1.1rem;
+}
+
+.billing-month-section {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 18px 24px;
+  margin-bottom: 8px;
+}
+.billing-month-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.billing-month-values {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.billing-month-net, .billing-month-payment {
+  color: #222;
+  font-size: 1.1rem;
+}
+.info-icon {
+  color: #888;
+  font-size: 1rem;
+  margin-left: 4px;
+}
+.billing-month-dropdown {
+  background: #f3f4f6;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.billing-month-dropdown:hover {
+  background: #e0e7ef;
+}
+
+.billing-year-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+.billing-year-select {
+  padding: 8px 18px 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f8faff;
+  outline: none;
+  min-width: 120px;
+}
+.billing-documents-btn {
+  background: #4d8aff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.billing-documents-btn:hover {
+  background: #2563eb;
+}
+
+.billing-months-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.billing-month-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.billing-month-item span {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .billing-topbar, .billing-summary-row, .billing-month-section, .billing-year-row, .billing-month-item {
+    padding: 10px 4px;
+  }
+  .billing-summary-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+} 

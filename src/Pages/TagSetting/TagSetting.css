@@ -1,0 +1,135 @@
+.tagsetting-page {
+  padding: 32px;
+}
+
+.tagsetting-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.tagsetting-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 32px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  gap: 18px;
+}
+
+.tagsetting-topbar-left {
+  
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.tagsetting-search {
+  padding: 10px 18px 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f8faff;
+  outline: none;
+  min-width: 220px;
+}
+.tagsetting-select {
+  padding: 10px 18px 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f8faff;
+  outline: none;
+  min-width: 120px;
+}
+.tagsetting-create-btn {
+  background: #4d8aff;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tagsetting-create-btn:hover {
+  background: #2563eb;
+}
+
+.tagsetting-table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 0 0 18px 0;
+}
+.tagsetting-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.tagsetting-table th, .tagsetting-table td {
+  padding: 16px 10px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 1.5px solid #e0e7ef;
+}
+.tagsetting-table th {
+  color: #4d8aff;
+  font-weight: 600;
+  background: #f8faff;
+}
+.tagsetting-table td {
+  color: #333;
+}
+.tag-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 4px;
+  background: #f3f4f6;
+  color: #333;
+}
+.tag-badge.red { background: #ffeded; color: #ff2d2d; }
+.tag-badge.green { background: #eaffed; color: #22c55e; }
+.tag-badge.blue { background: #eaf1ff; color: #4d8aff; }
+.tag-badge.orange { background: #fff3e6; color: #ff9900; }
+
+.tag-toggle {
+  width: 40px;
+  height: 22px;
+  accent-color: #4d8aff;
+  cursor: pointer;
+}
+
+.tag-action-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2rem;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px 6px;
+}
+.tag-action-btn:last-child { margin-right: 0; }
+.tag-action-btn.view:hover { color: #4d8aff; }
+.tag-action-btn.edit:hover { color: #22c55e; }
+.tag-action-btn.delete:hover { color: #ff2d2d; }
+
+@media (max-width: 900px) {
+  .tagsetting-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px 8px;
+  }
+  .tagsetting-table-wrapper {
+    padding: 0 0 8px 0;
+  }
+} 
