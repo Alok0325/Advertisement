@@ -21,12 +21,29 @@ const History = () => {
       {/* Topbar */}
       <div className="history-topbar">
         <div className="history-title">History</div>
-        <div className="history-actions">
-          <input className="history-search" type="text" placeholder="Search" />
-          <select className="history-select"><option>17-Jun-2025</option></select>
-          <select className="history-select"><option>Filter</option></select>
+        
+      </div>
+
+      {/* Filter Section */}
+      <div className="history-filters">
+        <div className="filter-item">
+          <span>Project Name</span>
+          <i className="fas fa-chevron-down"></i>
+        </div>
+        <div className="filter-item">
+          <span>Select Companion Templates</span>
+          <i className="fas fa-chevron-down"></i>
+        </div>
+        <div className="filter-item">
+          <span>25-Jun-2025</span>
+          <i className="fas fa-chevron-down"></i>
+        </div>
+        <div className="filter-item">
+          <span>Status Filter</span>
+          <i className="fas fa-chevron-down"></i>
         </div>
       </div>
+
       {/* Table */}
       <div className="history-table-wrapper">
         <table className="history-table">

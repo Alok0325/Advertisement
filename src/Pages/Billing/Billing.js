@@ -48,11 +48,14 @@ const Billing = () => {
           </div>
         </div>
       </div>
-      {/* Year Dropdown and Monthly Breakdown */}
+
+      {/* Year Dropdown and View Documents Button */}
       <div className="billing-year-row">
         <select className="billing-year-select"><option>2025</option></select>
         <button className="billing-documents-btn">📄 View documents</button>
       </div>
+
+      {/* Past Months List */}
       <div className="billing-months-list">
         {months.slice(1).map((m, idx) => (
           <div className="billing-month-item" key={m.name}>

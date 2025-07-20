@@ -116,25 +116,30 @@
   padding: 18px 24px;
   margin-bottom: 8px;
 }
+
 .billing-month-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .billing-month-values {
   display: flex;
   align-items: center;
   gap: 24px;
 }
+
 .billing-month-net, .billing-month-payment {
   color: #222;
   font-size: 1.1rem;
 }
+
 .info-icon {
   color: #888;
   font-size: 1rem;
   margin-left: 4px;
 }
+
 .billing-month-dropdown {
   background: #f3f4f6;
   color: #333;
@@ -145,6 +150,7 @@
   cursor: pointer;
   margin-left: 8px;
 }
+
 .billing-month-dropdown:hover {
   background: #e0e7ef;
 }
@@ -152,9 +158,10 @@
 .billing-year-row {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: space-between;
   margin-bottom: 8px;
 }
+
 .billing-year-select {
   padding: 8px 18px 8px 10px;
   border-radius: 10px;
@@ -164,6 +171,7 @@
   outline: none;
   min-width: 120px;
 }
+
 .billing-documents-btn {
   background: #4d8aff;
   color: #fff;
@@ -175,6 +183,7 @@
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .billing-documents-btn:hover {
   background: #2563eb;
 }
@@ -182,8 +191,9 @@
 .billing-months-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
+
 .billing-month-item {
   background: #fff;
   border-radius: 14px;
@@ -193,7 +203,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  border-bottom: 1px solid #f0f0f0;
 }
+
+.billing-month-item:last-child {
+  border-bottom: none;
+}
+
 .billing-month-item span {
   font-size: 1.1rem;
 }

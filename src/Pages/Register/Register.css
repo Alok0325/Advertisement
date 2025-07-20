@@ -1,0 +1,378 @@
+/* Register Page Styles - Split Screen Design */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  background: #ffffff;
+}
+
+/* Left Side - Video Background */
+.register-left {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.video-background {
+  flex: 1;
+  position: relative;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23f8f9fa"/><circle cx="300" cy="200" r="50" fill="%23e9ecef"/><circle cx="900" cy="600" r="80" fill="%23dee2e6"/><rect x="400" y="300" width="400" height="200" fill="%23f1f3f4"/></svg>');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.play-button i {
+  font-size: 24px;
+  color: #333;
+  margin-left: 4px;
+}
+
+/* Note Section */
+.note-section {
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.note-text {
+  color: #dc3545;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+/* Check Section */
+.check-section {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.check-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.check-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.check-input-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.check-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.check-input:focus {
+  border-color: #4CAF50;
+}
+
+.check-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.check-button:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.check-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.check-button.loading {
+  background: #45a049;
+}
+
+/* Right Side - Registration Form */
+.register-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.register-form-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Back Link */
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  align-self: flex-start;
+}
+
+.back-link:hover {
+  color: #45a049;
+}
+
+.back-link i {
+  font-size: 0.8rem;
+}
+
+/* Title Section */
+.title-section {
+  text-align: left;
+}
+
+.title-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.title-section p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Registration Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-input,
+.form-textarea {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: #ffffff;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #999;
+}
+
+.form-textarea {
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Submit Button */
+.submit-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button.loading {
+  background: #45a049;
+}
+
+/* Register Links */
+.register-links {
+  display: flex;
+  justify-content: center;
+}
+
+.login-link {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.login-link a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.login-link a:hover {
+  color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .register-container {
+    flex-direction: column;
+  }
+  
+  .register-left {
+    min-height: 300px;
+  }
+  
+  .register-right {
+    padding: 20px;
+  }
+  
+  .register-form-container {
+    gap: 24px;
+  }
+  
+  .title-section h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-left {
+    min-height: 250px;
+  }
+  
+  .check-section {
+    padding: 20px;
+  }
+  
+  .check-input-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .check-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .register-form-container {
+    gap: 20px;
+  }
+  
+  .title-section h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-right {
+    padding: 16px;
+  }
+  
+  .register-form-container {
+    gap: 16px;
+  }
+  
+  .title-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}

@@ -1,50 +1,103 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Assets.css';
 
-const assetTypes = [
-  { label: 'Audio', icon: '🎵' },
-  { label: 'Text', icon: '📝' },
-  { label: 'Video', icon: '🎥' },
-  { label: 'PDF', icon: '📄' },
-  { label: 'Emoji', icon: '😊' },
-];
-
-const assets = [
-  { name: 'offer_banner.png', size: '1.2 MB', date: '20 Jun 2025', used: '2 Campaigns' },
-  { name: 'logo_white.jpg', size: '950 KB', date: '15 May 2024', used: '3 Campaigns' },
-  { name: 'logo_white.jpg', size: '850 KB', date: '10 Apr 2023', used: '5 Campaigns' },
-  { name: 'logo_white.jpg', size: '700 KB', date: '5 March 2022', used: '4 Campaigns' },
-  { name: 'offer_banner.png', size: '1.1 MB', date: '1 Feb 2021', used: '6 Campaigns' },
-  { name: 'offer_banner.png', size: '1.3 MB', date: '25 Jan 2020', used: '2 Campaigns' },
-  { name: 'offer_banner.png', size: '900 KB', date: '10 Dec 2019', used: '3 Campaigns' },
-  { name: 'offer_banner.png', size: '750 KB', date: '18 Nov 2018', used: '5 Campaigns' },
-];
-
 const Assets = () => {
+  const [selectedFilter, setSelectedFilter] = useState('Image');
+
+  const assetsData = [
+    {
+      fileName: 'offer_banner.png',
+      size: '1.2 MB',
+      uploadedOn: '20 Jun 2025',
+      usedIn: '2 Campaigns',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'logo_white.jpg',
+      size: '950 KB',
+      uploadedOn: '15 May 2024',
+      usedIn: '3 Campaigns',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'product_shot.png',
+      size: '2.1 MB',
+      uploadedOn: '18 Jun 2025',
+      usedIn: '1 Campaign',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'hero_image.jpg',
+      size: '1.8 MB',
+      uploadedOn: '12 Jun 2025',
+      usedIn: '4 Campaigns',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'icon_set.png',
+      size: '750 KB',
+      uploadedOn: '10 Jun 2025',
+      usedIn: '2 Campaigns',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'background.jpg',
+      size: '3.2 MB',
+      uploadedOn: '08 Jun 2025',
+      usedIn: '1 Campaign',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'banner_ads.png',
+      size: '1.5 MB',
+      uploadedOn: '05 Jun 2025',
+      usedIn: '3 Campaigns',
+      assetType: 'Image'
+    },
+    {
+      fileName: 'thumbnail.jpg',
+      size: '680 KB',
+      uploadedOn: '03 Jun 2025',
+      usedIn: '2 Campaigns',
+      assetType: 'Image'
+    }
+  ];
+
+  const filterOptions = [
+    { name: 'Image', icon: 'fas fa-image' },
+    { name: 'GIF', icon: 'fas fa-file-image' },
+    { name: 'Video', icon: 'fas fa-play' },
+    { name: 'PDF', icon: 'fas fa-file-pdf' },
+    { name: 'Audio', icon: 'fas fa-music' }
+  ];
+
   return (
     <div className="assets-container">
       {/* Topbar */}
       <div className="assets-topbar">
         <div className="assets-title">Assets</div>
       </div>
+      
       <div className="assets-content">
-        {/* Asset Type Tabs and Create Button */}
-        <div className="assets-tabs-row">
-          <div className="assets-tabs">
-            {assetTypes.map((type, idx) => (
-              <button key={type.label} className={`assets-tab${idx === 0 ? ' active' : ''}`}>
-                <span className="tab-icon">{type.icon}</span> {type.label}
-              </button>
-            ))}
-          </div>
-          <button className="assets-create-btn">+ Create New</button>
+        {/* Asset Type Filters */}
+        <div className="assets-filters">
+          {filterOptions.map((filter) => (
+            <button
+              key={filter.name}
+              className={`filter-btn ${selectedFilter === filter.name ? 'active' : ''}`}
+              onClick={() => setSelectedFilter(filter.name)}
+            >
+              <i className={filter.icon}></i>
+              {filter.name}
+            </button>
+          ))}
+          <button className="add-btn">
+            <i className="fas fa-plus"></i>
+            Add
+          </button>
         </div>
-        {/* Search */}
-        <div className="assets-search-row">
-          <input className="assets-search" type="text" placeholder="Search" />
-          <span className="search-icon">🔍</span>
-        </div>
-        {/* Table */}
+
+        {/* Assets Table */}
         <div className="assets-table-wrapper">
           <table className="assets-table">
             <thead>
@@ -53,17 +106,25 @@ const Assets = () => {
                 <th>Size</th>
                 <th>Uploaded On</th>
                 <th>Used In</th>
+                <th>Assets Type</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {assets.map((a, idx) => (
-                <tr key={idx}>
-                  <td className="file-link"><a href="#">{a.name}</a></td>
-                  <td>{a.size}</td>
-                  <td>{a.date}</td>
-                  <td>{a.used}</td>
-                  <td><button className="delete-btn">🗑️</button></td>
+              {assetsData.map((asset, index) => (
+                <tr key={index}>
+                  <td className="file-name">
+                    <a href="#">{asset.fileName}</a>
+                  </td>
+                  <td>{asset.size}</td>
+                  <td>{asset.uploadedOn}</td>
+                  <td>{asset.usedIn}</td>
+                  <td>{asset.assetType}</td>
+                  <td>
+                    <button className="delete-btn">
+                      <i className="fas fa-trash"></i>
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
